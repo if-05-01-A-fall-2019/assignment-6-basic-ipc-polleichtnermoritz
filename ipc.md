@@ -15,8 +15,8 @@ overwrites the data from the process who wrote his data first, e.g. printerqueue
    while disabling interrupts the user could unintentionaly enter a infinite loop causing the machine to stop working 
    
 3. **Peterson's Solution**
-	1. Play through the two scenarios of the handout of Peterson's solution. Document how it works.
-  *Scenario 1:*
+   1. Play through the two scenarios of the handout of Peterson's solution. Document how it works.
+   *Scenario 1:*
   process 0 calls enter_region() sets interested[0] to true and loser = 0. then 0 enters the CR and then process 1 calls enter_region()
   and sets interested[1] to true and loser to 1. Then 1 enters the while and has to wait. Then 0 enter leave_region() and sets interrested[0]
   to false, and 1 escapes the while and enters the CR.
