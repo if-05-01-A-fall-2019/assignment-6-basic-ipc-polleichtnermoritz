@@ -22,8 +22,10 @@ overwrites the data from the process who wrote his data first, e.g. printerqueue
   to false, and 1 escapes the while and enters the CR.
   *Scenario 2:* 
   
-	2. Play through the scenario which makes the strict alternation approach fail. Document how it fails.
-  the problem here is that they check the while condition before the other process sets the lock variable so the other one cant pass
-	3. What is the meaning of the variable `loser` in Peterson's solution? When does it have any effect?
+2. Play through the scenario which makes the strict alternation approach fail. Document how it fails.
+  lets say that process 0 has a higher priority then process 1. Process 0 enters enter_region() and sets turn = 1 and then process 1 gets
+  to run through the CR and process 0 checks again if turn != 0, but turn is 1. So process checks the while unecessary, because it will 
+  never turn to 0 because the scheduler only lets process 0 do things. 
+3. What is the meaning of the variable `loser` in Peterson's solution? When does it have any effect?
   the loser variable defines the process who enters last. only has a effect when the other process is also interested
-	4. Extend the given functions such they can handle three processes.
+4. Extend the given functions such they can handle three processes.
